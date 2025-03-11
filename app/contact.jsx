@@ -16,10 +16,17 @@ const Contact = () => {
       <ImageBackground
         source={backgroundOne}
         resizeMode='cover'
-        style={{ height: '100%' }}
+        style={styles.imageBackground}
       >
         <Text style={styles.text}>Contact Us</Text>
         <Text style={styles.textTwo}>Email: victoryma23@gmail.com </Text>
+        <Text style={styles.textTwo}>
+          This app was made for hardcore fans of LeBron Raymone James Sr. !!!{' '}
+        </Text>
+        <Image
+          style={styles.imageTwo}
+          source={require('@/assets/images/basketball-dog.jpeg')}
+        />
       </ImageBackground>
     </View>
   );
@@ -28,12 +35,19 @@ const Contact = () => {
 export default Contact;
 
 const styles = StyleSheet.create({
+  imageBackground: {
+    width: '100%',
+    height: '100%',
+    flex: '1',
+    alignItems: 'center',
+    flexDirection: 'column',
+  },
   text: {
     color: 'white',
     fontSize: 40,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginTop: 60,
+    marginTop: 20,
     marginBottom: 10,
     padding: 5,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
@@ -42,12 +56,17 @@ const styles = StyleSheet.create({
   textTwo: {
     color: 'white',
     fontSize: 30,
-    fontWeight: 'bold',
+    fontWeight: 50,
     textAlign: 'center',
-    marginTop: 60,
+    marginTop: 20,
     marginBottom: 10,
     padding: 5,
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
     width: '100%',
+  },
+  imageTwo: {
+    height: 300,
+    width: 300,
+    borderRadius: 50,
   },
 });
