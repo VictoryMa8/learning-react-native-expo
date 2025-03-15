@@ -20,6 +20,7 @@ const Contact = () => {
       >
         <Text style={styles.text}>Contact Us</Text>
         <Text style={styles.textTwo}>Email: victoryma23@gmail.com </Text>
+        <Text style={styles.textTwo}>GitHub: VictoryMa8 </Text>
         <Text style={styles.textTwo}>
           This app was made for hardcore fans of LeBron Raymone James Sr. !!!{' '}
         </Text>

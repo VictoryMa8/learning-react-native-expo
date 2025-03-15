@@ -19,6 +19,7 @@ const App = () => {
         style={styles.imageBackground}
       >
         <Text style={styles.text}>LeBron Fan App</Text>
+        <Text style={styles.text}>An app for LeBron fans alike</Text>
         <Image
           style={styles.imageOne}
           source={require('@/assets/images/basketball-cat.jpeg')}
