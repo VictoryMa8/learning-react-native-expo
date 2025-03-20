@@ -6,11 +6,32 @@ import {
   ImageBackground,
   Pressable,
 } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import backgroundOne from '@/assets/images/background-one.jpg';
-import { Link } from 'expo-router';
+import { Link, router } from 'expo-router';
+import { auth } from '../firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 const App = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+        router.replace('/auth');
+      }
+    });
+
+    return unsubscribe;
+  }, []);
+
+  if (!user) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -33,6 +54,15 @@ const App = () => {
             <Text style={styles.buttonText}>Contact Us</Text>
           </Pressable>
         </Link>
+        <Pressable
+          style={[
+            styles.buttonStyle,
+            { backgroundColor: 'rgba(255, 0, 0, 0.75)' },
+          ]}
+          onPress={() => auth.signOut()}
+        >
+          <Text style={styles.buttonText}>Sign Out</Text>
+        </Pressable>
       </ImageBackground>
     </View>
   );

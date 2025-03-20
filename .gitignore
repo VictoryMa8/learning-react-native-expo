@@ -1,7 +1,21 @@
 # Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
 
-# dependencies
+# Environment variables
+.env
+.env.*
+
+# Dependencies
 node_modules/
+.expo/
+dist/
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
 
 # Expo
 .expo/
@@ -21,7 +35,6 @@ expo-env.d.ts
 .metro-health-check*
 
 # debug
-npm-debug.*
 yarn-debug.*
 yarn-error.*
 
@@ -36,3 +49,7 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
+# IDE
+.idea/
+.vscode/
