@@ -1,6 +1,5 @@
 import React from 'react';
-import { Stack, Tabs } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
+import { Tabs } from 'expo-router';
 import { FontAwesome } from '@expo/vector-icons';
 
 export default function TabLayout() {
