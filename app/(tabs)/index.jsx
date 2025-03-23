@@ -5,12 +5,18 @@ import {
   Image,
   ImageBackground,
   Pressable,
+  Modal,
+  TextInput,
+  SafeAreaView,
 } from 'react-native';
-import React from 'react';
+import { React, useState } from 'react';
 import backgroundOne from '@/assets/images/flower-wallpaper.jpg';
 import { Link } from 'expo-router';
 
 export default function App() {
+  // useState for modal
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <View style={styles.container}>
       {/* using imported background image */}
@@ -33,6 +39,29 @@ export default function App() {
             <Text style={styles.buttonText}>Contact Us</Text>
           </Pressable>
         </Link>
+        <Modal
+          animationType='slide'
+          visible={modalVisible}
+          onRequestClose={() => {
+            console.log('Toggled modal');
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <SafeAreaView style={styles.modalShown}>
+            <Pressable
+              style={styles.buttonStyle}
+              onPress={() => setModalVisible(!modalVisible)}
+            >
+              <Text style={styles.buttonText}>Hide Modal</Text>
+            </Pressable>
+          </SafeAreaView>
+        </Modal>
+        <Pressable
+          style={styles.buttonStyle}
+          onPress={() => setModalVisible(true)}
+        >
+          <Text style={styles.buttonText}>Show Modal</Text>
+        </Pressable>
       </ImageBackground>
     </View>
   );
@@ -62,6 +91,13 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: 'rgba(0, 0, 0, 0.75)',
   },
+  buttonStyleTwo: {
+    justifyContent: 'center',
+    height: 60,
+    width: 300,
+    borderRadius: 20,
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+  },
   buttonText: {
     color: 'white',
     fontSize: 30,
@@ -81,5 +117,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
     resizeMode: 'cover',
+  },
+  modalShown: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
