@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     color: 'white',
     marginHorizontal: 40,
+    textAlign: 'center',
   },
   imageStyle: {
     height: 200,

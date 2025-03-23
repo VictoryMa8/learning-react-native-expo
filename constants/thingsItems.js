@@ -19,4 +19,9 @@ export default THINGS_ITEMS = [
     title: 'All-NBA',
     description: 'LeBron has been All-NBA 20 times',
   },
+  {
+    id: 5,
+    title: 'Family Man',
+    description: 'LeBron has a wife, Savannah, and has three children with her',
+  },
 ];
