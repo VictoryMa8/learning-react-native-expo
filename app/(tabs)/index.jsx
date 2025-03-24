@@ -62,6 +62,12 @@ export default function App() {
         >
           <Text style={styles.buttonText}>Show Modal</Text>
         </Pressable>
+        <Pressable
+          style={styles.buttonStyleTwo}
+          onPress={() => setModalVisible(true)}
+        >
+          <Text style={styles.buttonText}>Show Modal (Another Way)</Text>
+        </Pressable>
       </ImageBackground>
     </View>
   );
@@ -94,7 +100,7 @@ const styles = StyleSheet.create({
   buttonStyleTwo: {
     justifyContent: 'center',
     height: 60,
-    width: 300,
+    width: 500,
     borderRadius: 20,
     backgroundColor: 'rgba(0, 0, 0, 0.75)',
   },
